@@ -129,7 +129,7 @@ export default function App() {
 
   function HandleChat(id: number) {
     const product = shoes.find((item) => item.id === id);
-    const number = "234805359471";
+    const number = "2349027036495";
     let message = `ProductName : ${product?.name}`;
     message += `Price: &#x20A6${product?.price}`;
     message += `${product?.image}`;
