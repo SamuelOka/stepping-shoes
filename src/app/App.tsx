@@ -131,7 +131,7 @@ export default function App() {
     const product = shoes.find((item) => item.id === id);
     const number = "2349027036495";
     let message = `ProductName : ${product?.name}`;
-    message += `Price: &#x20A6${product?.price}`;
+    message += `Price:  ${product?.price} Naria`;
     message += `${product?.image}`;
     const url = `https://wa.me/${number}?text=${message}`;
     window.open(url, "_blank");
