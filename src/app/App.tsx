@@ -127,6 +127,15 @@ export default function App() {
       ? shoes
       : shoes.filter((s) => s.category === activeCategory);
 
+  function HandleChat(id: number) {
+    const product = shoes.find((item) => item.id === id);
+    const number = "234805359471";
+    let message = `ProductName : ${product?.name}`;
+    message += `Price: &#x20A6${product?.price}`;
+    message += `${product?.image}`;
+    const url = `https://wa.me/${number}?text=${message}`;
+    window.open(url, "_blank");
+  }
   return (
     <div
       className="min-h-screen bg-background text-foreground"
@@ -264,7 +273,10 @@ export default function App() {
                       : "opacity-0 translate-y-2"
                   }`}
                 >
-                  <button className="w-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest py-2.5 rounded flex items-center justify-center gap-1.5 hover:bg-primary/90 transition-colors">
+                  <button
+                    onClick={() => HandleChat(shoe.id)}
+                    className="w-full bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest py-2.5 rounded flex items-center justify-center gap-1.5 hover:bg-primary/90 transition-colors"
+                  >
                     Add to Bag
                     <ShoppingBag size={12} />
                   </button>
